@@ -1,0 +1,34 @@
+{% load cart_tags %}
+<table class="table table bordered">
+    <thread>
+        <tr>
+            <th colspan="3" class="text-center">
+                Carrito de Compras
+            </th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thread>
+    <tbody>
+        {% if request.session.cart.items %}
+            {% for key,value in request.session.cart.items %}
+                <tr class="text-center">
+                    <th>{{ value.name }}</th>
+                    <th>{{ value.quantity }}</th>
+                    <th></th>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <th colspan="3">
+                    <div class="alert alert-danger text-center">
+                        No tienes productos en el carrito
+                    </div>
+                </th>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
