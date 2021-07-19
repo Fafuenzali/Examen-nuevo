@@ -31,15 +31,15 @@ class Producto(models.Model):
         verbose_name_plural = 'Productos'
         ordering = ['id']
 
-    class contacto(models.Model):
-        run = models.CharField(max_length=10, null=False, verbose_name='Run')
-        nombre = models.CharField(max_length=100, null=False, verbose_name='Nombre completo')
-        correoe = models.CharField(max_length=50, null=False, verbose_name='Correo Electronico')
-        telefono = models.CharField(max_length=15, null=False, verbose_name='Numero de telefono')
-        mensaje = models.CharField(max_length=200, null=False, verbose_name='Mensaje')
-        fecha =models.DateField(("Fecha"), default=datetime.date.today) 
+class contacto(models.Model):
+    run = models.CharField(max_length=10, null=False, verbose_name='Run')
+    nombre = models.CharField(max_length=100, null=False, verbose_name='Nombre completo')
+    correoe = models.CharField(max_length=50, null=False, verbose_name='Correo Electronico')
+    telefono = models.CharField(max_length=15, null=False, verbose_name='Numero de telefono')
+    mensaje = models.CharField(max_length=200, null=False, verbose_name='Mensaje')
+    fecha =models.DateField(("Fecha"), default=datetime.date.today) 
 
-        def __date__(self):
+    def __date__(self):
             return self.fecha
 
 
