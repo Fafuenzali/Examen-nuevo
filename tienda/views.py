@@ -53,7 +53,6 @@ def salir(request):
 
 @login_required(login_url ='/acceder')
 def listado_productos(request):
-    cart = Cart()
     products = Producto.objects.all()
     return render(request, "productos.html",{
         "products": products

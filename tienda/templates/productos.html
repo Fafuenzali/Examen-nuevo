@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
- {% load static %}
-{% load cart_tags %}
 
 {% block title %}Productos -{% endblock %}
 
 
 
 {% block content %}
-     Total {{ cart_total_amount|money_format:"$" }}
     <div class="row">
         <div class="col-9">
             <div class="row">
