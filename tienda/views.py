@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, ContactoForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -88,6 +88,16 @@ def clear_cart(request):
 
 def base(request):
     return render(request, "base.html")
+
+def contacto(request):
+    form = ContactoForm()
+    if request.method == 'POST':
+        form = ContactoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            
+    context = {'form':form}
+    return render(request, "contacto.html", context)
 
 
 
