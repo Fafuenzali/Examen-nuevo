@@ -24,8 +24,4 @@ urlpatterns = [
     path('', include('tienda.urls')),
 ]
 
-<<<<<<< HEAD
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-=======
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
->>>>>>> 063d5412c02323dcb69f9bdc785fd76c2cd3b228
