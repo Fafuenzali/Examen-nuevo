@@ -26,7 +26,7 @@ class VistaRegistro(View):
         else:
             for msg in form.error_messages:
                 messages.error(request, form.error_messages[msg])
-            return render(request, "registro", {"form": form})
+            return render(request, "registro.html", {"form": form})
 
 def acceder(request):
     if request.method == "POST":
